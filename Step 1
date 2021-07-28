@@ -1,0 +1,5 @@
+#Language: Bash
+#Create a folder called "Converted" in the same directory as "gptabs"
+#go into the "gptabs" directory in terminal (cd .../gptabs)
+
+for i in $(ls); do for j in $(ls $i); do for k in $(ls $i/$j); do mscore -o ../Converted/$i/$j/$k/$k.mscz $i/$j/$k; done; done; done
