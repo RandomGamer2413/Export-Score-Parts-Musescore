@@ -1,0 +1,20 @@
+#Language: Powershell (Download it)
+#Define the export parts function in powershell (copy/paste)
+#Go into the "Converted" directory (cd .../Converted)
+
+foreach($file in Get-ChildItem $Converted)
+{
+cd $file
+foreach($file1 in Get-ChildItem $file)
+{
+cd $file1
+foreach($file2 in Get-ChildItem $file1)
+{
+cd $file2
+foreach($file3 in Get-ChildItem $file2)
+{
+Export-MuseScore $file3 -parts
+}
+}
+}
+}
